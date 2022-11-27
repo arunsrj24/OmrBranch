@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<script src="js/jquery.min.js"></script>
+<script src="js/jquery.tablesorter.min.js"></script>
+<script src="js/Chart.min.js"></script>
+<script src="js/moment.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+
+<link rel="stylesheet" href="css/bootstrap.min.css" type="text/css"/>
+<link rel="stylesheet" href="css/cucumber.css" type="text/css"/>
+<link rel="stylesheet" href="css/font-awesome.min.css"/>
+<link rel="shortcut icon" href="images/favicon.png"/>
+
+<script>
+$(document).ready(function() {
+    // this will tell tablesorter to try looking for the data-value attribute
+    // if present, it'll sort by that instead
+    // otherwise, it'll sort by the text content of the table cell
+    $("#tablesorter").tablesorter({
+        textAttribute: 'data-value',
+        // ignores the first row of the header, the 'scenario', 'steps', since
+        // sorting those doesn't make sense
+        selectorHeaders: '> thead tr:not(.dont-sort) th',
+        // use a stable sort
+        sortStable: true
+    });
+});
+</script>
+
+
+
+
+
+
+
+
+
+
+
+<title>Cucumber Reports  - Steps Overview</title>
+
+</head>
+<body>
+
+<nav class="navbar navbar-default navbar-fixed-top" id="navigation">
+  <div class="container-fluid">
+    <div class="collapse navbar-collapse">
+      <p class="navbar-text navbar-left">Cucumber Report</p>
+      <ul class="nav navbar-nav navbar-right">
+        <li role="presentation" ><a href="overview-features.html">Features</a></li>
+        <li role="presentation" ><a href="overview-tags.html">Tags</a></li>
+        <li role="presentation"     class="active" ><a href="overview-steps.html">Steps</a></li>
+        <li role="presentation" ><a href="overview-failures.html">Failures</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+<div class="container-fluid">
+  <div class="col-md-5 col-md-offset-1">
+
+<table class="table table-bordered" id="build-info">
+  <thead>
+    <tr>
+      <th>Project</th>
+      <th>Date</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="info">
+      <td>Adactin Report</td>
+      <td>15 Oct 2022, 22:55</td>
+    </tr>
+  </tbody>
+</table>
+
+  </div>
+  <div class="col-md-3 col-md-offset-2">
+  </div>
+</div>
+
+
+<div id="report-lead" class="container-fluid">
+  <div class="col-md-10 col-md-offset-1">
+    <h2>Steps Statistics</h2>
+      <p>The following graph shows step statistics for this build. Below list is based on results.
+ step does not provide information about result then is not listed below.
+ Additionally @Before and @After are not counted because they are part of the scenarios, not steps.</p>
+  </div>
+</div>
+
+<div class="container-fluid" id="report">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1">
+      <table id="tablesorter" class="stats-table table-hover">
+
+        <thead>
+          <tr class="header">
+            <th>Implementation</th>
+            <th>Occurrences</th>
+            <th>Average duration</th>
+            <th>Max duration</th>
+            <th>Total durations</th>
+            <th>Ratio</th>
+          </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+              <td class="location">CommonSteps.user_should_verify_successful_login_with_message(String)</td>
+              <td>12</td>
+              <td class="duration" data-value="91091358">0.091</td>
+              <td class="duration" data-value="91091358">0.753</td>
+              <td class="duration" data-value="1093096304">1.093</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">HooksClass.afterscenario(Scenario)</td>
+              <td>13</td>
+              <td class="duration" data-value="2248824397">2.248</td>
+              <td class="duration" data-value="2248824397">4.484</td>
+              <td class="duration" data-value="29234717166">29.234</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">HooksClass.beforescenario()</td>
+              <td>13</td>
+              <td class="duration" data-value="8967807828">8.967</td>
+              <td class="duration" data-value="8967807828">11.977</td>
+              <td class="duration" data-value="116581501764">1:56.581</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">TC1_LoginStep.user_should_login_by_entering(String,String)</td>
+              <td>12</td>
+              <td class="duration" data-value="1000295936">1.000</td>
+              <td class="duration" data-value="1000295936">1.118</td>
+              <td class="duration" data-value="12003551237">12.003</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">TC1_LoginStep.user_should_login_by_entering_by_Enter_Key(String,String)</td>
+              <td>1</td>
+              <td class="duration" data-value="308768350">0.308</td>
+              <td class="duration" data-value="308768350">0.308</td>
+              <td class="duration" data-value="308768350">0.308</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">TC1_LoginStep.user_should_navigate_to_the_Adactin_login_page_using_url()</td>
+              <td>13</td>
+              <td class="duration" data-value="278402">0.000</td>
+              <td class="duration" data-value="278402">0.001</td>
+              <td class="duration" data-value="3619231">0.003</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">TC1_LoginStep.user_should_verify_unsuccessful_login_with_message_contains(String)</td>
+              <td>1</td>
+              <td class="duration" data-value="73868578">0.073</td>
+              <td class="duration" data-value="73868578">0.073</td>
+              <td class="duration" data-value="73868578">0.073</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">TC2_SearchHotelStep.user_click_search_button_without_entering_any_fields()</td>
+              <td>1</td>
+              <td class="duration" data-value="60341045">0.060</td>
+              <td class="duration" data-value="60341045">0.060</td>
+              <td class="duration" data-value="60341045">0.060</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">TC2_SearchHotelStep.user_search_hotel_by_entering_following_details_and(String,String,String,String,String,String,String,String)</td>
+              <td>7</td>
+              <td class="duration" data-value="1227038889">1.227</td>
+              <td class="duration" data-value="1227038889">1.536</td>
+              <td class="duration" data-value="8589272229">8.589</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">TC2_SearchHotelStep.user_search_hotel_by_entering_only_mandatory_fields_and(String,String,String,String,String)</td>
+              <td>1</td>
+              <td class="duration" data-value="1102993061">1.102</td>
+              <td class="duration" data-value="1102993061">1.102</td>
+              <td class="duration" data-value="1102993061">1.102</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">TC2_SearchHotelStep.user_should_verify_after_search_by_error_message_and(String,String)</td>
+              <td>1</td>
+              <td class="duration" data-value="2125287490">2.125</td>
+              <td class="duration" data-value="2125287490">2.125</td>
+              <td class="duration" data-value="2125287490">2.125</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">TC2_SearchHotelStep.user_should_verify_after_search_by_success_message(String)</td>
+              <td>7</td>
+              <td class="duration" data-value="32908360">0.032</td>
+              <td class="duration" data-value="32908360">0.036</td>
+              <td class="duration" data-value="230358520">0.230</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">TC2_SearchHotelStep.user_verify_after_search_by_error_message(String)</td>
+              <td>1</td>
+              <td class="duration" data-value="2075123742">2.075</td>
+              <td class="duration" data-value="2075123742">2.075</td>
+              <td class="duration" data-value="2075123742">2.075</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">TC3_SelectHotelStep.user_should_click_continue_without_select_hotel_name()</td>
+              <td>1</td>
+              <td class="duration" data-value="63293564">0.063</td>
+              <td class="duration" data-value="63293564">0.063</td>
+              <td class="duration" data-value="63293564">0.063</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">TC3_SelectHotelStep.user_should_select_Hotel_name()</td>
+              <td>4</td>
+              <td class="duration" data-value="685786125">0.685</td>
+              <td class="duration" data-value="685786125">0.747</td>
+              <td class="duration" data-value="2743144501">2.743</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">TC3_SelectHotelStep.user_should_verify_after_select_Hotel_with_error_message(String)</td>
+              <td>1</td>
+              <td class="duration" data-value="2028948289">2.028</td>
+              <td class="duration" data-value="2028948289">2.028</td>
+              <td class="duration" data-value="2028948289">2.028</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">TC3_SelectHotelStep.user_should_verify_after_select_Hotel_with_success_message(String)</td>
+              <td>4</td>
+              <td class="duration" data-value="2068452347">2.068</td>
+              <td class="duration" data-value="2068452347">2.097</td>
+              <td class="duration" data-value="8273809391">8.273</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">TC4_BookHotelStep.user_should_book_a_hotel_by_entering_following_details_and(String,String,String,DataTable)</td>
+              <td>2</td>
+              <td class="duration" data-value="1199246089">1.199</td>
+              <td class="duration" data-value="1199246089">1.342</td>
+              <td class="duration" data-value="2398492179">2.398</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">TC4_BookHotelStep.user_should_book_a_hotel_without_entering_any_fields()</td>
+              <td>1</td>
+              <td class="duration" data-value="89294039">0.089</td>
+              <td class="duration" data-value="89294039">0.089</td>
+              <td class="duration" data-value="89294039">0.089</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">TC4_BookHotelStep.user_should_verify_after_book_hotel_with_error_message_and(String,String,String,String,String,String,String)</td>
+              <td>1</td>
+              <td class="duration" data-value="2385069421">2.385</td>
+              <td class="duration" data-value="2385069421">2.385</td>
+              <td class="duration" data-value="2385069421">2.385</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">TC4_BookHotelStep.user_should_verify_after_book_hotel_with_success_message(String)</td>
+              <td>1</td>
+              <td class="duration" data-value="10075967501">10.075</td>
+              <td class="duration" data-value="10075967501">10.075</td>
+              <td class="duration" data-value="10075967501">10.075</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">TC5_CancelBookingStep.user_should_cancel_created_order_id()</td>
+              <td>1</td>
+              <td class="duration" data-value="3877571373">3.877</td>
+              <td class="duration" data-value="3877571373">3.877</td>
+              <td class="duration" data-value="3877571373">3.877</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">TC5_CancelBookingStep.user_should_cancel_existing_order_id(String)</td>
+              <td>1</td>
+              <td class="duration" data-value="2530273160">2.530</td>
+              <td class="duration" data-value="2530273160">2.530</td>
+              <td class="duration" data-value="2530273160">2.530</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">TC5_CancelBookingStep.user_should_verify_after_book_hotel_with_success_message_and_saved_order_id(String)</td>
+              <td>1</td>
+              <td class="duration" data-value="10049789552">10.049</td>
+              <td class="duration" data-value="10049789552">10.049</td>
+              <td class="duration" data-value="10049789552">10.049</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">TC5_CancelBookingStep.user_should_verify_after_cancel_order_id_with_success_message(String)</td>
+              <td>2</td>
+              <td class="duration" data-value="2103647585">2.103</td>
+              <td class="duration" data-value="2103647585">2.134</td>
+              <td class="duration" data-value="4207295170">4.207</td>
+              <td class="passed">100.00%</td>
+            </tr>
+        </tbody>
+
+        <tfoot class="total">
+          <tr>
+            <td>25</td>
+            <td>103</td>
+            <td class="duration">2.157</td>
+            <td class="duration">1:56.581</td>
+            <td class="duration">3:42.205</td>
+            <td>Totals</td>
+          </tr>
+        </tfoot>
+
+      </table>
+    </div>
+  </div>
+</div>
+
+
+<nav class="navbar navbar-default" id="footer">
+  <div class="container-fluid">
+    <p class="navbar-text navbar-right">
+        <small>generate Cucumber HTML reports via:&nbsp;</small>
+        <a class="navbar-link" href="https://github.com/jenkinsci/cucumber-reports-plugin">Jenkins Plugin</a> |
+        <a class="navbar-link" href="https://github.com/damianszczepanik/cucumber-reporting">Standalone</a> |
+        <a class="navbar-link" href="https://github.com/damianszczepanik/cucumber-sandwich">Sandwich</a> |
+        <a class="navbar-link" href="https://github.com/damianszczepanik/maven-cucumber-reporting">Maven</a>
+        &nbsp;&nbsp;
+    </p>
+  </div>
+</nav>
+
+</body>
+</html>
