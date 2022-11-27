@@ -14,7 +14,7 @@ import cucumber.api.junit.Cucumber;
 @RunWith(Cucumber.class)
 @CucumberOptions(features="src/test/resources",
 glue="com.stepDefinition",dryRun=false,
-monochrome=true,
+monochrome=true,tags="@login",
 plugin="json:C:\\Users\\Arunsrj\\eclipse-workspace\\OmrBranchAdactinAutomation\\target\\out.json"
 )
  
