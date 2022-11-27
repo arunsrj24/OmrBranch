@@ -1,6 +1,6 @@
-@login
-Feature: Validate the login functionality of Adactin Hotel Application
 
+Feature: Validate the login functionality of Adactin Hotel Application
+@login
   Scenario Outline: Verifying Adactin login with valid
     Given User should navigate to the Adactin login page using url
     When User should login by entering "<username>", "<password>"
